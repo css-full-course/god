@@ -1,0 +1,175 @@
+/*
+ * variable
+ *******************************/
+
+:root {
+    --header-h: 65px;
+    --background: #fff;
+    --main-color: #112d4e;
+    --default-text-color: #222831;
+}
+
+#mode:checked ~ * {
+    --background: #222831;
+    --default-text-color: #fff;
+}
+
+/*
+ * element setting
+ *******************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--default-text-color);
+}
+:is(html, body, .app) {
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+}
+:is(input, button, textarea) {
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+:is(ul, ol, li) {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*
+ * class setting 
+ *******************************/
+.none {
+    display: none;
+}
+.flex {
+    display: flex;
+}
+.grid {
+    display: grid;
+}
+.container {
+    margin: 0 auto;
+    width: 1440px;
+    height: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn:hover {
+    background: var(--main-color);
+    color: var(--background);
+}
+
+.app {
+    padding-top: var(--header-h);
+}
+/*
+ * header
+ *******************************/
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-h);
+    background: var(--background);
+}
+header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+header .menu-container {
+    height: 100%;
+    gap: 3rem;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1rem;
+}
+header .gnb {
+    height: 100%;
+    font-size: 0.875rem;
+}
+header .gnb ul {
+    gap: 3.5rem;
+    height: 100%;
+}
+header .gnb > ul > li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header .gnb .sub {
+    top: 100%;
+    position: absolute;
+}
+header .gnb .sub li {
+    white-space: nowrap;
+    padding: 0.5rem 0;
+}
+
+header .mode {
+    position: relative;
+}
+header .mode label {
+    cursor: pointer;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+    border-radius: 30px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+header .mode::before {
+    content: "";
+    display: block;
+    position: absolute;
+    margin: 2.5px;
+    width: 20px;
+    height: 20px;
+    transition: 0.5s;
+    border-radius: 50%;
+    transform: translateX(0%);
+    background: var(--main-color);
+    pointer-events: none;
+}
+#mode:checked ~ .app header .mode::before {
+    content: "";
+    transform: translateX(100%);
+}
+
+/*
+ * section-1
+ *******************************/
+#section-1 {
+    background-color: red;
+    width: 100%;
+    height: 800px;
+}
+#section-2 {
+    background-color: blue;
+    width: 100%;
+    height: 800px;
+}
+
+#section-3 {
+    background-color: gray;
+    width: 100%;
+    height: 800px;
+}
